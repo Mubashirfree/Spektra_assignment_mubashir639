@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #1D3557;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #457B9D;
+        }
+    </style>
+    
+       
+</head>
+<body>
+    <div class="container">
+        <h2>Survey Form</h2>
+        <form action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+
+            <label for="gender">Gender:</label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+            <br>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+            <br>
+
+            <label for="education">Education:</label>
+            <select id="education" name="education">
+                <option value="highschool">High School</option>
+                <option value="undergrad">Undergraduate</option>
+                <option value="postgrad">Postgraduate</option>
+            </select>
+            <br>
+
+            <label for="feedback">Feedback:</label>
+            <textarea id="feedback" name="feedback"></textarea>
+            <br>
+
+            <label for="interests">Interests:</label>
+            <input type="checkbox" id="music" name="interests" value="music">
+            <label for="music">Music</label>
+            <input type="checkbox" id="sports" name="interests" value="sports">
+            <label for="sports">Sports</label>
+            <input type="checkbox" id="movies" name="interests" value="movies">
+            <label for="movies">Movies</label>
+            <br>
+            
+            <label for="howDidYouHear">How did you hear about us?</label>
+            <select id="howDidYouHear" name="howDidYouHear">
+                <option value="friends">Friends/Family</option>
+                <option value="online">Online Advertisement</option>
+                <option value="social">Social Media</option>
+                <option value="other">Other</option>
+            </select>
+            <br>
+
+            <label for="rating">Rate our service (1-5):</label>
+            <input type="number" id="rating" name="rating" min="1" max="5">
+            <br>
+
+            
+
+            <label for="surveyDate">Survey Date:</label>
+            <input type="date" id="surveyDate" name="surveyDate" required>
+            <br>
+
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

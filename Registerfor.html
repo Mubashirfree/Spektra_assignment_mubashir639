@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #registrationForm {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <form id="registrationForm" action="#" method="post" onsubmit="return validateForm()">
+        <h2>Registration Form</h2>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required><br>
+        
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required><br>
+        
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age"><br>
+        
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}"><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+        
+        <input type="submit" value="Register">
+    </form>
+
+    <script>
+        function validateForm() {
+            var phoneInput = document.getElementById('phone');
+            var emailInput = document.getElementById('email');
+            var isValid = true;
+
+            if (!phoneInput.checkValidity()) {
+                isValid = false;
+                alert("Please enter a valid phone number (10 digits).");
+            }
+
+            if (!emailInput.checkValidity()) {
+                isValid = false;
+                alert("Please enter a valid email address.");
+            }
+
+            return isValid;
+        }
+    </script>
+</body>
+</html>
